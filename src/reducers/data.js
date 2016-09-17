@@ -1,3 +1,4 @@
+/*global fetch*/
 const LOAD_DATA = 'LOAD_DATA'
 const LOAD_DATA_SUCCESS = 'LOAD_DATA_SUCCESS'
 const LOAD_DATA_FAILED = 'LOAD_DATA_FAILED'
@@ -5,7 +6,8 @@ const LOAD_DATA_FAILED = 'LOAD_DATA_FAILED'
 const initialState = {
   loading: true,
   error: null,
-  days: []
+  days: [],
+  updateTime: ''
 }
 
 export default function reducer (state = initialState, action) {
@@ -21,7 +23,8 @@ export default function reducer (state = initialState, action) {
         ...state,
         loading: false,
         error: null,
-        days: action.days
+        days: action.days,
+        updateTime: action.updateTime
       }
     case LOAD_DATA_FAILED:
       return {

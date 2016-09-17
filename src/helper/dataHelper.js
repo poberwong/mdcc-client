@@ -1,6 +1,5 @@
 const DAY_NAMES = ['第一天', '第二天']
 export function genData ({data, ok}) {
-  console.log('data: ', data)
   return ok && data.map((day, index) => {
     let topicSessionMap = {}
     day.forEach(session => {

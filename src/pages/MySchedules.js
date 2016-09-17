@@ -22,6 +22,7 @@ class MySchedules extends Component {
     navigator: PropTypes.object,
     days: PropTypes.array.isRequired,
     topics: PropTypes.object,
+    updateTime: PropTypes.string,
     emptyOperation: PropTypes.func
   };
 
@@ -69,7 +70,8 @@ class MySchedules extends Component {
   goToAbout = () => {
     this.props.navigator.push({
       component: AboutPage,
-      scene: Navigator.SceneConfigs.PushFromRight
+      scene: Navigator.SceneConfigs.PushFromRight,
+      updateTime: this.props.updateTime
     })
   }
 
@@ -108,6 +110,7 @@ const styles = StyleSheet.create({
 
 const mapStateToProps = state => ({
   days: state.data.days,
+  updateTime: state.data.updateTime,
   topics: genSubscribedData(state.data.days, state.schedule.subscription)
 })
 

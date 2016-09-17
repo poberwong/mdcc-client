@@ -10,15 +10,14 @@ export default store => next => action => {
 
   return promise.then(response => response.json())
   .then(responseData => {
-    let result = genData({
-      data: responseData.data.list,
-      ok: responseData.ok
-    })
-    console.log('result:', result)
     next({
       ...rest,
       type: SUCCESS,
-      days: result
+      updateTime: responseData.data.last_update,
+      days: genData({
+        data: responseData.data.list,
+        ok: responseData.ok
+      })
     })
   })
   .catch(error => next({
