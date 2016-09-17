@@ -32,6 +32,8 @@ class MySchedules extends Component {
     return (
       <ListContainer
         title='我的订阅'
+        actionName='关于'
+        actionFunc={this.goToAbout}
         parallaxContent={profilePicture}
         backgroundImage={require('../assets/my-g8-background.png')}
         backgroundColor='#A8D769'>
@@ -60,6 +62,12 @@ class MySchedules extends Component {
         <Topic topic={item} isSubscribed/>
       </TouchableOpacity>
     )
+  }
+
+  goToAbout = () => {
+    // this.props.navigator.push({
+    //   component: AboutPage
+    // })
   }
 
   goToCarousel = (item) => {

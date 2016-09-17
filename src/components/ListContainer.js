@@ -10,6 +10,7 @@ import {
   View,
   Dimensions,
   NativeModules,
+  TouchableOpacity,
   Animated,
   StyleSheet
 } from 'react-native'
@@ -17,6 +18,8 @@ import {
 type Props = {
   title: string;
   selectedSegment?: number;
+  actionName: string;
+  actionFunc: func;
   selectedSectionColor: string;
   backgroundImage: number;
   backgroundColor: string;
@@ -115,9 +118,7 @@ export default class extends React.Component {
             backgroundColor={this.props.backgroundColor}>
             {this.renderParallaxContent()}
           </ParallaxBackground>
-          <View style={{height: STATUS_BAR_HEIGHT + NAV_BAR_HEIGHT, paddingTop: STATUS_BAR_HEIGHT, alignItems: 'center', justifyContent: 'center'}}>
-            {this.renderHeaderTitle()}
-          </View>
+          {this.renderHeader(STATUS_BAR_HEIGHT, NAV_BAR_HEIGHT)}
           {this.renderFixedStickyHeader(stickyHeader)}
         </View>
         <ViewPager
@@ -141,6 +142,26 @@ export default class extends React.Component {
       </Text>
     )
   }
+
+  renderHeader = (STATUS_BAR_HEIGHT, NAV_BAR_HEIGHT) => {
+    const {actionName, actionFunc} = this.props
+    return (
+      <View style={{height: STATUS_BAR_HEIGHT + NAV_BAR_HEIGHT, paddingTop: STATUS_BAR_HEIGHT, alignItems: 'center', flexDirection: 'row'}}>
+        <View style={{flex: 1}} />
+        {this.renderHeaderTitle()}
+        {actionName
+          ? <View style={styles.action}>
+            <TouchableOpacity
+              onPress={actionFunc}
+              hitSlop={{top: 10, left: 30, bottom: 10, right: 0}}>
+              <Text style={{color: 'white', marginRight: 10}}>{actionName}</Text>
+            </TouchableOpacity>
+          </View>
+          : <View style={styles.action}/>
+        }
+      </View>
+    )
+  };
 
   renderHeaderTitle (): ?ReactElement { // 导航条标题，有伸缩视图时标题常驻，没有则逐渐出现
     var transform
@@ -199,13 +220,13 @@ export default class extends React.Component {
     var transform
 
     if (!NativeModules.F8Scrolling) {
-      var distance = EMPTY_CELL_HEIGHT - this.state.stickyHeaderHeight;
+      var distance = EMPTY_CELL_HEIGHT - this.state.stickyHeaderHeight
       var translateY = this.state.anim.interpolate({
         inputRange: [0, distance],
         outputRange: [distance, 0],
-        extrapolateRight: 'clamp',
-      });
-      transform = [{translateY}];
+        extrapolateRight: 'clamp'
+      })
+      transform = [{translateY}]
     }
     return (
       <Animated.View
@@ -289,5 +310,9 @@ var styles = StyleSheet.create({
     top: 64,
     left: 0,
     right: 0
+  },
+  action: {
+    flex: 1,
+    alignItems: 'flex-end'
   }
 })
