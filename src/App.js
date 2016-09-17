@@ -38,10 +38,10 @@ export default class extends Component {
         mandatoryUpdateMessage: '',
         optionalUpdateMessage: '',
         appendReleaseDescription: true,
-        descriptionPrefix: '有新版本，是否下载？\n\n ==更新内容==\n',
+        descriptionPrefix: '有新版本，是否下载？\n\n ===更新内容===\n',
         title: '更新提示'
       },
-      installMode: codePush.InstallMode.IMMEDIATE
+      installMode: codePush.InstallMode.ON_NEXT_RESUME
     })
   }
 
