@@ -4,6 +4,7 @@ import {connect} from 'react-redux'
 import TopicsCarousel from './TopicsCarousel'
 import Topic from './Topic'
 import {genSubscribedData} from '../helper/dataHelper'
+import AboutPage from './AboutPage'
 import SubscribeButton from '../components/SubscribeButton'
 import ListContainer from '../components/ListContainer'
 import {EMPTY_CELL_HEIGHT} from '../components/ListContainer'
@@ -11,6 +12,7 @@ import {
   View,
   Text,
   StyleSheet,
+  Navigator,
   Image,
   TouchableOpacity
 } from 'react-native'
@@ -65,9 +67,10 @@ class MySchedules extends Component {
   }
 
   goToAbout = () => {
-    // this.props.navigator.push({
-    //   component: AboutPage
-    // })
+    this.props.navigator.push({
+      component: AboutPage,
+      scene: Navigator.SceneConfigs.PushFromRight
+    })
   }
 
   goToCarousel = (item) => {

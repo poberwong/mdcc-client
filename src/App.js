@@ -59,12 +59,16 @@ export default class extends Component {
             initialRoute={{
               component: Home
             }}
-            configureScene={route => Navigator.SceneConfigs.FloatFromBottom}
+            configureScene={this.configureScene}
             renderScene={(route, navigator) => {
               return <route.component navigator={navigator} {...route} {...route.passProps}/>
             }}/>
         </View>
       </Provider>
     )
+  }
+
+  configureScene (route) {
+    return route.scene || Navigator.SceneConfigs.FloatFromBottom
   }
 }
