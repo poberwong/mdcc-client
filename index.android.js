@@ -1,4 +1,4 @@
 import { AppRegistry } from 'react-native'
-import GmtcClient from './src/App'
+import MdccClient from './src/App'
 
-AppRegistry.registerComponent('GmtcClient', () => GmtcClient)
+AppRegistry.registerComponent('MdccClient', () => MdccClient)

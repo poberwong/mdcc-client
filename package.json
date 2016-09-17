@@ -1,6 +1,6 @@
 {
-  "name": "GmtcClient",
-  "version": "0.0.1",
+  "name": "MdccClient",
+  "version": "0.1.0",
   "private": true,
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start"

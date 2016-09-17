@@ -1,4 +1,4 @@
-package com.gmtcclient;
+package com.mdccclient;
 
 import android.app.Application;
 import android.util.Log;

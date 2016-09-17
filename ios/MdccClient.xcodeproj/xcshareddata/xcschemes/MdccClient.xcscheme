@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-               BuildableName = "GmtcClient.app"
-               BlueprintName = "GmtcClient"
-               ReferencedContainer = "container:GmtcClient.xcodeproj">
+               BuildableName = "MdccClient.app"
+               BlueprintName = "MdccClient"
+               ReferencedContainer = "container:MdccClient.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -29,9 +29,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "00E356ED1AD99517003FC87E"
-               BuildableName = "GmtcClientTests.xctest"
-               BlueprintName = "GmtcClientTests"
-               ReferencedContainer = "container:GmtcClient.xcodeproj">
+               BuildableName = "MdccClientTests.xctest"
+               BlueprintName = "MdccClientTests"
+               ReferencedContainer = "container:MdccClient.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -47,9 +47,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "00E356ED1AD99517003FC87E"
-               BuildableName = "GmtcClientTests.xctest"
-               BlueprintName = "GmtcClientTests"
-               ReferencedContainer = "container:GmtcClient.xcodeproj">
+               BuildableName = "MdccClientTests.xctest"
+               BlueprintName = "MdccClientTests"
+               ReferencedContainer = "container:MdccClient.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -57,16 +57,16 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "GmtcClient.app"
-            BlueprintName = "GmtcClient"
-            ReferencedContainer = "container:GmtcClient.xcodeproj">
+            BuildableName = "MdccClient.app"
+            BlueprintName = "MdccClient"
+            ReferencedContainer = "container:MdccClient.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>
    <LaunchAction
-      buildConfiguration = "Release"
+      buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       launchStyle = "0"
@@ -80,9 +80,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "GmtcClient.app"
-            BlueprintName = "GmtcClient"
-            ReferencedContainer = "container:GmtcClient.xcodeproj">
+            BuildableName = "MdccClient.app"
+            BlueprintName = "MdccClient"
+            ReferencedContainer = "container:MdccClient.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -99,9 +99,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "GmtcClient.app"
-            BlueprintName = "GmtcClient"
-            ReferencedContainer = "container:GmtcClient.xcodeproj">
+            BuildableName = "MdccClient.app"
+            BlueprintName = "MdccClient"
+            ReferencedContainer = "container:MdccClient.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
