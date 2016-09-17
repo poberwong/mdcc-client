@@ -81,7 +81,7 @@ class Schedules extends Component {
 
   renderSectionHeader = (sessionData, sessionTitle) => {
     return (
-      <View key={sessionTitle + (Math.random() * 10).toFixed()} style={{backgroundColor: '#eeeeee'}}>
+      <View key={sessionTitle} style={{backgroundColor: '#eeeeee'}}>
         <Text style={[{margin: 6, marginLeft: 8}, styles.font]}>{sessionTitle}</Text>
       </View>
     )
