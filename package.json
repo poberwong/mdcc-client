@@ -8,8 +8,6 @@
   "dependencies": {
     "react": "^15.3.1",
     "react-native": "^0.33.0",
-    "react-native-navigationbar": "^0.4.4",
-    "react-native-scrollable-tab-view": "^0.5.3",
     "react-native-tab-navigator": "^0.3.2",
     "react-redux": "^4.2.0",
     "redux": "^3.4.0",
