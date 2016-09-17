@@ -51,5 +51,7 @@
 		<key>NSAllowsArbitraryLoads</key>
 		<true/>
 	</dict>
+	<key>CodePushDeploymentKey</key>
+	<string>armhCVwCNmypcFalVQd2U8fglOqNVJ34mxQfZ</string>
 </dict>
 </plist>
