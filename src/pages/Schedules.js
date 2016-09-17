@@ -12,6 +12,7 @@ import {
   Text,
   StyleSheet,
   Image,
+  ActivityIndicator,
   TouchableOpacity
 } from 'react-native'
 const API = 'http://android-gems.com/api/mdcc'
@@ -28,7 +29,7 @@ class Schedules extends Component {
     if (loading || days.length === 0) {
       return (
         <View style={[styles.container, styles.center]} >
-          <Text>Loading...</Text>
+          <ActivityIndicator size='small' />
         </View>
       )
     }
