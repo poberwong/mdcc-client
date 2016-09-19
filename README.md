@@ -27,6 +27,6 @@ is made for mdcc conference.
 * [liaohuqiu](https://github.com/liaohuqiu) provides data support
 * [okernel](https://github.com/okernel)'s help
 
-# License
+## License
 *BSD*  
 As commercial value, only used for learning not business activity
