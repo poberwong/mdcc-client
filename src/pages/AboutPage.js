@@ -13,7 +13,7 @@ export default (props) => {
   return (
     <View style={{flex: 1, backgroundColor: 'white'}}>
       <StatusBar barStyle='default'/>
-      <Image source={{uri: 'http://img.bss.csdn.net/201607181813521391.jpg'}}
+      <Image source={require('../assets/location.jpg')}
         style={{width: null, height: 264}}/>
       <View style={{padding: 15, flex: 1, alignItems: 'center'}}>
         <Text style={{fontSize: 23, fontWeight: 'bold', lineHeight: 25, color: '#555', textAlign: 'center'}}>Thanks for contribution from
@@ -24,7 +24,7 @@ export default (props) => {
         </Text>
         <View style={{flexDirection: 'row', flex: 1, alignItems: 'center'}}>
           <Image source={require('../assets/avatar.png')} style={[styles.avatar, {backgroundColor: 'white'}]}/>
-          <Image style={[styles.avatar, {marginLeft: -15, zIndex: -1}]} source={{uri: 'https://avatars0.githubusercontent.com/u/4088573?v=3&s=400'}}/>
+          <Image source={require('../assets/liaohuqiu.jpeg')} style={[styles.avatar, {marginLeft: -15, zIndex: -1}]}/>
         </View>
         <View style={styles.bottom}>
           <Text style={[styles.bottomText, {marginBottom: 5}]}>latest_update: {props.updateTime}</Text>
