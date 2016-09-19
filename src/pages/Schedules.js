@@ -21,11 +21,12 @@ class Schedules extends Component {
     navigator: PropTypes.object,
     loadData: PropTypes.func,
     loading: PropTypes.bool.isRequired,
-    days: PropTypes.array.isRequired
+    days: PropTypes.array.isRequired,
+    onSegmentSelected: PropTypes.func
   };
 
   render () {
-    const {loading, days} = this.props
+    const {loading, days, onSegmentSelected} = this.props
     if (loading || days.length === 0) {
       return (
         <View style={[styles.container, styles.center]} >
@@ -46,6 +47,7 @@ class Schedules extends Component {
         title='中国移动开发者大会'
         needTransitionTitle
         parallaxContent={parallaxContent}
+        onSegmentChange={index => onSegmentSelected(index)}
         backgroundImage={require('../assets/schedule-background.png')}>
         <PureListView data={days[0].topics}
           title={days[0].name}

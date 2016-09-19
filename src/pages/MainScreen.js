@@ -8,6 +8,16 @@ import {
 	StyleSheet
 } from 'react-native'
 
+const SCHEDULE_IMAGES = [
+  {
+    active: require('../assets/schedule-23-active.png'),
+    inactive: require('../assets/schedule-23.png')
+  },
+  {
+    active: require('../assets/schedule-24-active.png'),
+    inactive: require('../assets/schedule-24.png')
+  }
+]
 export default class extends React.Component {
   static propTypes = {
     navigator: PropTypes.object,
@@ -15,7 +25,8 @@ export default class extends React.Component {
   };
 
   state={
-    selectedTab: 'schedules'
+    selectedTab: 'schedules',
+    selectedSegment: 0
   }
 
   render () {
@@ -25,10 +36,12 @@ export default class extends React.Component {
           selected={this.state.selectedTab === 'schedules'}
           title='日程安排'
           selectedTitleStyle={{color: '#032250'}}
-          renderIcon={() => <Image source={require('../assets/schedule.png')} style={styles.icon} />}
-          renderSelectedIcon={() => <Image source={require('../assets/schedule-active.png')} style={styles.icon} />}
+          renderIcon={() => <Image source={SCHEDULE_IMAGES[this.state.selectedSegment].inactive} style={styles.icon} />}
+          renderSelectedIcon={() => <Image source={SCHEDULE_IMAGES[this.state.selectedSegment].active} style={styles.icon} />}
           onPress={() => this.setState({ selectedTab: 'schedules' })}>
-          <Schedules navigator={this.props.navigator} />
+          <Schedules
+            navigator={this.props.navigator}
+            onSegmentSelected={this.onSegmentSelected}/>
         </TabNavigator.Item>
         <TabNavigator.Item
           selected={this.state.selectedTab === 'mySchedules'}
@@ -47,12 +60,18 @@ export default class extends React.Component {
     this.setState({
       selectedTab: 'schedules'
     })
+  };
+
+  onSegmentSelected = (selectedSegment) => {
+    this.setState({
+      selectedSegment
+    })
   }
 }
 
 const styles = StyleSheet.create({
   icon: {
-    height: 27,
-    width: 26
+    height: 28,
+    width: 28
   }
 })
