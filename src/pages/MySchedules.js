@@ -28,7 +28,7 @@ class MySchedules extends Component {
 
   render () {
     let profilePicture = (
-      <Image source={require('../assets/avatar.png')}
+      <Image source={require('../assets/personal.png')}
         style={{height: 90, width: 90, borderRadius: 45, backgroundColor: 'white'}}
       />
     )

@@ -33,17 +33,17 @@ export default class extends Component {
             <Image source={require('../assets/avatar.png')} style={[styles.avatar, {backgroundColor: 'white'}]}/>
             <Image source={require('../assets/liaohuqiu.jpeg')} style={[styles.avatar, {marginLeft: -15, zIndex: -1}]}/>
           </View>
-          <View style={styles.bottom}>
+          <TouchableOpacity
+            style={styles.bottom}
+            onPress={() => Linking.openURL('https://github.com/Bob1993/mdcc-client')}>
             <Text style={[styles.bottomText, {marginBottom: 5}]}>latest_update: {updateTime}</Text>
-            <TouchableOpacity
-              style={{flexDirection: 'row'}}
-              onPress={() => Linking.openURL('https://github.com/Bob1993/mdcc-client')}>
-                <Image
-                  style={styles.github}
-                  source={{uri: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Octicons-mark-github.svg/1200px-Octicons-mark-github.svg.png'}} />
-                <Text style={styles.bottomText}>https://github.com/Bob1993/mdcc-client</Text>
-            </TouchableOpacity>
-          </View>
+            <View style={[{flexDirection: 'row', justifyContent: 'center', alignItems: 'center'}]}>
+              <Image
+                style={styles.github}
+                source={{uri: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Octicons-mark-github.svg/1200px-Octicons-mark-github.svg.png'}} />
+              <Text style={styles.bottomText}>https://github.com/Bob1993/mdcc-client</Text>
+            </View>
+          </TouchableOpacity>
         </View>
         <TouchableOpacity
           hitSlop={{top: 15, left: 15, bottom: 15, right: 15}}
@@ -80,8 +80,7 @@ const styles = StyleSheet.create({
     right: 0,
     left: 0,
     bottom: 0,
-    height: 50,
-    justifyContent: 'center',
+    height: 45,
     alignItems: 'center'
   },
   bottomText: {
