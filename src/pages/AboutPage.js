@@ -4,11 +4,13 @@ import {
   Text,
   StyleSheet,
   TouchableOpacity,
+  Platform,
   Linking,
   StatusBar,
   Image
 } from 'react-native'
 
+const avatarIndex = Platform.OS === 'ios' ? -1 : 1
 export default class extends Component {
   static propTypes = {
     updateTime: PropTypes.string,
@@ -31,7 +33,7 @@ export default class extends Component {
           </Text>
           <View style={{flexDirection: 'row', flex: 1, alignItems: 'center'}}>
             <Image source={require('../assets/avatar.png')} style={[styles.avatar, {backgroundColor: 'white'}]}/>
-            <Image source={require('../assets/liaohuqiu.jpeg')} style={[styles.avatar, {marginLeft: -15, zIndex: -1}]}/>
+            <Image source={require('../assets/liaohuqiu.jpeg')} style={[styles.avatar, {marginLeft: -15, zIndex: avatarIndex}]}/>
           </View>
           <TouchableOpacity
             style={styles.bottom}
