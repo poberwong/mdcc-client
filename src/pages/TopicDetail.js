@@ -35,7 +35,7 @@ export default class TopicDetail extends Component {
           <Topic topic={topic} style={{paddingLeft: 0, paddingRight: 0}} lineNumber={2}/>
           {this.renderContent()}
         </ScrollView>
-        { !topic.is_rest &&
+        {!topic.is_rest &&
           <View style={styles.footer}>
             <SubscribeButton isSubscribed={isSubscribed} onPress={this.toggleAdded} />
           </View>
@@ -62,7 +62,7 @@ export default class TopicDetail extends Component {
         </View>
         )
     } else {
-      return <Text style={styles.description}>{convert(topic.session.session_intro)}</Text>
+      return <Text style={styles.description}>{convert(topic.topic_intro)}</Text>
     }
   }
 }

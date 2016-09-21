@@ -10,6 +10,8 @@ import {
   Image
 } from 'react-native'
 
+const STATUS_BAR_HEIGHT = Platform.OS === 'ios' ? 20 : 25
+const NAV_BAR_HEIGHT = Platform.OS === 'ios' ? 44 : 56
 const avatarIndex = Platform.OS === 'ios' ? -1 : 1
 export default class extends Component {
   static propTypes = {
@@ -75,7 +77,7 @@ const styles = StyleSheet.create({
     transform: [{rotate: '45deg'}],
     position: 'absolute',
     left: 15,
-    top: 34
+    top: STATUS_BAR_HEIGHT + NAV_BAR_HEIGHT / 3
   },
   bottom: {
     position: 'absolute',
