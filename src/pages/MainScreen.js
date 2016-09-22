@@ -47,7 +47,7 @@ export default class extends React.Component {
           selected={this.state.selectedTab === 'mySchedules'}
           title='我的订阅'
           selectedTitleStyle={{color: '#032250'}}
-          renderIcon={() => <Image source={require('../assets/my-schedule.png')} style={styles.icon} />}
+          renderIcon={() => <Image source={require('../assets/my-schedule.png')} style={[styles.icon, {height: 28.5}]} />}
           renderSelectedIcon={() => <Image source={require('../assets/my-schedule-active.png')} style={styles.icon} />}
           onPress={() => this.setState({ selectedTab: 'mySchedules' })}>
           <MySchedules navigator={this.props.navigator} emptyOperation={this.goHome}/>

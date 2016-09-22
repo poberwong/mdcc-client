@@ -10,8 +10,8 @@ import {
   TouchableOpacity,
   StyleSheet
 } from 'react-native'
-
-const STATUS_BAR_HEIGHT = Platform.OS === 'ios' ? 20 : 25
+const ABOVE_LOLIPOP = Platform.Version && Platform.Version > 19
+const STATUS_BAR_HEIGHT = Platform.OS === 'ios' ? 20 : (ABOVE_LOLIPOP ? 25 : 0)
 const NAV_BAR_HEIGHT = Platform.OS === 'ios' ? 44 : 56
 export default class extends Component {
 
