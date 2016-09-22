@@ -6,10 +6,13 @@ import {
   View,
   Text,
   Image,
+  Platform,
   TouchableOpacity,
   StyleSheet
 } from 'react-native'
-
+const ABOVE_LOLIPOP = Platform.Version && Platform.Version > 19
+const STATUS_BAR_HEIGHT = Platform.OS === 'ios' ? 20 : (ABOVE_LOLIPOP ? 25 : 0)
+const NAV_BAR_HEIGHT = Platform.OS === 'ios' ? 44 : 56
 export default class extends Component {
 
   static propTypes = {
@@ -104,7 +107,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#6ec0df'
   },
   header: {
-    paddingTop: 20,
+    paddingTop: STATUS_BAR_HEIGHT,
     flexDirection: 'row'
   },
   headerLeft: {
@@ -114,7 +117,7 @@ const styles = StyleSheet.create({
   },
   headerContent: {
     flex: 3,
-    height: 44,
+    height: NAV_BAR_HEIGHT,
     alignItems: 'center',
     justifyContent: 'center'
   },

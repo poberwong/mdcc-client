@@ -1,14 +1,17 @@
 import React, {PropTypes, Component} from 'react'
+import NavBar from 'react-native-navigationbar'
 import {
   View,
   Text,
   StyleSheet,
   TouchableOpacity,
+  Platform,
   Linking,
   StatusBar,
   Image
 } from 'react-native'
 
+const avatarIndex = Platform.OS === 'ios' ? -1 : 1
 export default class extends Component {
   static propTypes = {
     updateTime: PropTypes.string,
@@ -31,7 +34,7 @@ export default class extends Component {
           </Text>
           <View style={{flexDirection: 'row', flex: 1, alignItems: 'center'}}>
             <Image source={require('../assets/avatar.png')} style={[styles.avatar, {backgroundColor: 'white'}]}/>
-            <Image source={require('../assets/liaohuqiu.jpeg')} style={[styles.avatar, {marginLeft: -15, zIndex: -1}]}/>
+            <Image source={require('../assets/liaohuqiu.jpeg')} style={[styles.avatar, {marginLeft: -15, zIndex: avatarIndex}]}/>
           </View>
           <TouchableOpacity
             style={styles.bottom}
@@ -45,9 +48,14 @@ export default class extends Component {
             </View>
           </TouchableOpacity>
         </View>
-        <TouchableOpacity
-          hitSlop={{top: 15, left: 15, bottom: 15, right: 15}}
-          style={styles.backArrow} onPress={() => navigator.pop()}/>
+        <NavBar
+          backColor='white'
+          title=''
+          barTintColor='transparent'
+          barWrapperStyle={styles.barStyle}
+          barBottomThickness={0}
+          backFunc={() => navigator.pop()}
+         />
       </View>
     )
   }
@@ -64,17 +72,6 @@ const styles = StyleSheet.create({
     height: 15,
     marginRight: 8
   },
-  backArrow: {
-    width: 13,
-    height: 13,
-    borderColor: 'white',
-    borderLeftWidth: 2,
-    borderBottomWidth: 2,
-    transform: [{rotate: '45deg'}],
-    position: 'absolute',
-    left: 15,
-    top: 34
-  },
   bottom: {
     position: 'absolute',
     right: 0,
@@ -82,6 +79,12 @@ const styles = StyleSheet.create({
     bottom: 0,
     height: 45,
     alignItems: 'center'
+  },
+  barStyle: {
+    position: 'absolute',
+    top: 0,
+    right: 0,
+    left: 0
   },
   bottomText: {
     fontSize: 11,

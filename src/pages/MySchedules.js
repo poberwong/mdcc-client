@@ -13,10 +13,12 @@ import {
   Text,
   StyleSheet,
   Navigator,
+  Platform,
   Image,
   TouchableOpacity
 } from 'react-native'
 
+const EmptyPadding = Platform.OS === 'ios' ? EMPTY_CELL_HEIGHT : 0
 class MySchedules extends Component {
   static propTypes = {
     navigator: PropTypes.object,
@@ -29,13 +31,14 @@ class MySchedules extends Component {
   render () {
     let profilePicture = (
       <Image source={require('../assets/personal.png')}
-        style={{height: 90, width: 90, borderRadius: 45, backgroundColor: 'white'}}
+        style={{height: 90, width: 90, borderRadius: 45}}
       />
     )
     return (
       <ListContainer
         title='我的订阅'
         actionName='关于'
+        androidTitle='我的订阅'
         actionFunc={this.goToAbout}
         parallaxContent={profilePicture}
         backgroundImage={require('../assets/my-g8-background.png')}
@@ -51,7 +54,7 @@ class MySchedules extends Component {
 
   renderEmptyView = () => {
     return (
-      <View style={{flex: 1, justifyContent: 'center', alignItems: 'center', paddingTop: EMPTY_CELL_HEIGHT}}>
+      <View style={{flex: 1, justifyContent: 'center', alignItems: 'center', paddingTop: EmptyPadding}}>
         <Image source={require('../assets/no-topics-added.png')} />
         <Text style={styles.message}>您订阅的主题将会{'\n'}展现于此</Text>
         <SubscribeButton style={{width: 220, marginTop: 15}} onPress={this.props.emptyOperation}/>

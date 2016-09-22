@@ -16,6 +16,7 @@ persistStore(store, {storage: AsyncStorage})
 import {
   Platform,
   StatusBar,
+  BackAndroid,
   View,
   Navigator
 } from 'react-native'
@@ -43,7 +44,21 @@ export default class extends Component {
       },
       installMode: codePush.InstallMode.ON_NEXT_RESUME
     })
+    BackAndroid.addEventListener('hardwareBackPress', this.handleBack)
   }
+
+  componentWillUnmount () {
+    BackAndroid.removeEventListener('hardwareBackPress', this.handleBack)
+  }
+
+  handleBack = () => {
+    const navigator = this.refs.navigator
+    if (navigator && navigator.getCurrentRoutes().length > 1) {
+      navigator.pop()
+      return true
+    }
+    return false
+  };
 
   render () {
     return (
@@ -56,6 +71,7 @@ export default class extends Component {
             translucent={ABOVE_LOLIPOP}
           />
           <Navigator
+            ref='navigator'
             initialRoute={{
               component: Home
             }}
