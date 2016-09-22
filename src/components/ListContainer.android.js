@@ -1,12 +1,13 @@
 var React = require('React')
 var ViewPager = require('./ViewPager')
+import NavBar from 'react-native-navigationbar'
 import SegmentTab from './SegmentTab'
 import {
   Text,
   View,
   Image,
   Dimensions,
-  TouchableOpacity,
+  Platform,
   Animated,
   StyleSheet
 } from 'react-native'
@@ -107,20 +108,18 @@ export default class extends React.Component {
   renderHeader = () => {
     const {actionName, actionFunc, androidTitle} = this.props
     return (
-      <View style={styles.navBar}>
-        <View style={{flex: 1}} />
-        <Text style={styles.headerTitle}>{androidTitle}</Text>
-        {actionName
-          ? <View style={styles.action}>
-            <TouchableOpacity
-              onPress={actionFunc}
-              hitSlop={{top: 10, left: 30, bottom: 10, right: 0}}>
-              <Text style={{color: 'white', marginRight: 10}}>{actionName}</Text>
-            </TouchableOpacity>
-          </View>
-          : <View style={styles.action}/>
-        }
-      </View>
+      <NavBar
+        backIconHidden
+        title={androidTitle}
+        titleStyle={styles.headerTitle}
+        actionTextColor='white'
+        actionName={actionName}
+        actionFunc={actionFunc}
+        barTintColor='transparent'
+        barWrapperStyle={styles.barStyle}
+        barBottomThickness={0}
+        backFunc={() => navigator.pop()}
+       />
     )
   };
 
@@ -145,22 +144,18 @@ var styles = StyleSheet.create({
     left: 0,
     right: 0
   },
+  barStyle: {
+    position: 'absolute',
+    top: 0,
+    right: 0,
+    left: 0
+  },
   headerWrapper: {
     height: 250,
     width: null,
     paddingTop: 35,
     justifyContent: 'center',
     alignItems: 'center'
-  },
-  navBar: {
-    height: 25 + 56,
-    paddingTop: 25,
-    alignItems: 'center',
-    flexDirection: 'row',
-    position: 'absolute',
-    top: 0,
-    left: 0,
-    right: 0
   },
   headerTitle: {
     color: 'white',
@@ -172,9 +167,5 @@ var styles = StyleSheet.create({
     fontSize: 42,
     fontWeight: 'bold',
     letterSpacing: -1
-  },
-  action: {
-    flex: 1,
-    alignItems: 'flex-end'
   }
 })
