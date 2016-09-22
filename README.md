@@ -1,8 +1,9 @@
-# mdcc-client (iOS only)
+# mdcc-client (for Android and iOS)
 This application based on [react-native-cx](https://github.com/applean/react-native-cx) which is my another project in [Applean Contest](https://applean.cn)
 is made for mdcc conference. 
 
 ## Preview
+<img src="http://ww3.sinaimg.cn/large/005zU9b3gw1f82ukqpin6g30a90ie1ky.gif" width="340" height="600"/>
 ### Splash
 <img src="http://ww4.sinaimg.cn/large/005zU9b3jw1f7y74sjof2j30ku112wgg.jpg" width="340" height="600"/>
 ### Home
@@ -16,6 +17,7 @@ is made for mdcc conference.
 
 ## Download
 * iOS: [iTunes](https://itunes.apple.com/cn/app/mdccclient/id1155880311?l=en&mt=8)
+* Android: [Fir.im](http://fir.im/mdcc)
 
 ## Usage
 2. `npm install` install required libraries
