@@ -20,7 +20,8 @@ is made for mdcc conference.
 * Android: [Fir.im](http://fir.im/mdcc)
 
 ## Usage
-2. `npm install` install required libraries
+1. `npm install` install required libraries
+2. `react-native link` link native modules
 3. `react-native run-ios` of course, you need OSX system to run ios.
 
 **If you encounter some problems while experiencing, just contact me for help or [create issues](https://github.com/Bob1993/mdcc-client/issues) in this repository.**
